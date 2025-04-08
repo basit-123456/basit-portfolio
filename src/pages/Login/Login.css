@@ -1,0 +1,247 @@
+
+
+.main-login {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+}
+
+.log-in {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 40px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.header h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, #0c0ce4, #4e45cc);
+    border-radius: 2px;
+}
+
+.header p {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 15px;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+.google {
+    background-color: #db4437;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #999;
+}
+
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+}
+
+.divider span {
+    padding: 0 15px;
+    font-size: 0.9rem;
+}
+
+.login-form form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: #0c0ce4;
+    box-shadow: 0 0 0 3px rgba(12, 12, 228, 0.1);
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.remember input {
+    margin: 0;
+    width: auto;
+}
+
+.remember label {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.forgot a {
+    color: #0c0ce4;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0c0ce4, #4e45cc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #0a0ab8, #3f38b0);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(12, 12, 228, 0.3);
+}
+.login-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+.signup-link {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signup-link a {
+    color: #0c0ce4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+    .log-in {
+        padding: 30px 20px;
+    }
+
+    .header h3 {
+        font-size: 1.8rem;
+    }
+
+    .login-form input {
+        padding: 12px 12px 12px 40px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

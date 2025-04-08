@@ -1,0 +1,321 @@
+/* Main container styles */
+.main-contact-1 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Cards section styles */
+.main-contact1 {
+  margin-bottom: 4rem;
+}
+
+.cards1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card1 {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #4776E6, #8E54E9);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.card1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card1:hover::before {
+  transform: scaleX(1);
+}
+
+/* Icon styles */
+.icon-card {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.card1:hover .icon-card {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.icon-card i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* Card content styles */
+.body-card {
+  margin-bottom: 1.5rem;
+}
+
+.body-card h3 {
+  margin-bottom: 0.8rem;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.body-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.icon-number h3 {
+  color: #4776E6;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.card1:hover .icon-number h3 {
+  color: #8E54E9;
+}
+
+/* Button styles */
+.icon-number-btn button {
+  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.icon-number-btn button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8E54E9, #4776E6);
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.icon-number-btn button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 15px rgba(71, 118, 230, 0.3);
+}
+
+.icon-number-btn button:hover::before {
+  opacity: 1;
+}
+
+.icon-number-btn button:active {
+  transform: translateY(0);
+}
+
+/* Contact section styles */
+.contact-section-1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.image-section-1 {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.image-section-1 img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-section-1 img:hover {
+  transform: scale(1.03);
+}
+
+.form-section-1 {
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-section-1 form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-section-1 input,
+.form-section-1 textarea {
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.form-section-1 input:focus,
+.form-section-1 textarea:focus {
+  border-color: #4776E6;
+  box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.2);
+  outline: none;
+}
+
+.form-section-1 input::placeholder,
+.form-section-1 textarea::placeholder {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.form-section-1 input:focus::placeholder,
+.form-section-1 textarea:focus::placeholder {
+  color: #bbb;
+}
+
+#btn-2 {
+  background: linear-gradient(135deg, #4776E6, #8E54E9);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: 0.5rem;
+}
+
+#btn-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8E54E9, #4776E6);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+#btn-2:hover::before {
+  left: 0;
+}
+
+#btn-2:hover {
+  box-shadow: 0 7px 15px rgba(71, 118, 230, 0.3);
+}
+
+#btn-2 i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+#btn-2:hover i {
+  transform: translateX(5px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .cards1 {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card1 {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .contact-section-1 {
+    padding: 2rem;
+  }
+}
+
+/* Animation for form submission */
+@keyframes formSuccess {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.form-success {
+  animation: formSuccess 0.5s ease;
+}
+
+/* Subtle hover animation for inputs */
+.form-section-1 input:hover,
+.form-section-1 textarea:hover {
+  border-color: #ccc;
+}
+
+/* Focus animation for cards */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 5px 20px rgba(71, 118, 230, 0.2);
+  }
+  100% {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card1:focus-within {
+  animation: pulse 1.5s infinite;
+}
+
+

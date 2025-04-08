@@ -1,0 +1,259 @@
+.body-header-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+/* Header Styles */
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.header h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block; 
+}
+
+.header h2 span {
+  color: #0070f3;
+  position: relative;
+}
+
+.header h2 span::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0070f3;
+  border-radius: 2px;
+}
+
+.header p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* this is card section  */
+.main-services-section-1 {
+  width: 100%;
+  /* border: 2px solid red; */
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.main-cards-1 {
+  /* width: 100%; */
+  display: flex;
+  border-radius: 5px;
+
+  box-shadow: 0 2.4px 6px 4px rgba(192, 181, 181, 0.3);
+  gap: 30px;
+  /* text-align: center; */
+  margin-bottom: 50px;
+  margin-left: 90px;
+  margin-right: 100px;
+}
+
+/* left side card */
+.left-side {
+  width: 40%;
+  /* margin-left: 10px; */
+  /* margin:30px; */
+  /* border: 2px solid blue; */
+}
+
+.left-side img {
+  width: 100%;
+  height: 379px;
+  /* margin-bottom: 0px; */
+  object-fit: cover; /* Added for better image handling */
+ 
+}
+
+/* right side card section */
+.right-side {
+  width: 40%;
+  height: 330px;
+  /* border: 2px solid red; */
+}
+
+.right-side h3 {
+  /* text-align: left; */
+  /* align-items: center; */
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px;
+  color: rgb(0, 71, 177);
+}
+
+.right-side p {
+  line-height: 18px;
+  text-align: none;
+  margin-left: 15px;
+}
+
+/* Animation for header */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+
+/* Large Tablets and Small Desktops */
+@media screen and (max-width: 1024px) {
+  .body-header-body {
+    padding: 0 1.5rem;
+  }
+
+  .main-cards-1 {
+    margin-left: 50px;
+    margin-right: 50px;
+    gap: 20px;
+  }
+
+  .header h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Medium Tablets */
+@media screen and (max-width: 768px) {
+  .header h2 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .main-cards-1 {
+    flex-direction: column;
+    margin-left: 30px;
+    margin-right: 30px;
+    align-items: center;
+  }
+
+  .left-side,
+  .right-side {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .left-side {
+    margin-bottom: 20px;
+  }
+
+  .right-side {
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .left-side img {
+    height: auto;
+    max-height: 350px;
+  }
+}
+
+/* Small Tablets and Large Phones (like Galaxy S series) */
+@media screen and (max-width: 600px) {
+  .body-header-body {
+    padding: 0 1rem;
+  }
+
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .header h2 {
+    font-size: 1.8rem;
+  }
+
+  .main-cards-1 {
+    margin-left: 15px;
+    margin-right: 15px;
+    gap: 15px;
+  }
+
+  .right-side h3 {
+    font-size: 18px;
+  }
+}
+
+/* Mobile Phones (iPhone and smaller Android devices) */
+@media screen and (max-width: 480px) {
+  .header h2 {
+    font-size: 1.5rem;
+  }
+
+  .header p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .main-cards-1 {
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 1px 2px 2px rgb(209, 199, 199);
+  }
+
+  .left-side,
+  .right-side {
+    width: 95%;
+  }
+
+  .right-side h3 {
+    font-size: 16px;
+    padding: 8px;
+    margin: 8px;
+  }
+
+  .right-side p {
+    font-size: 0.9rem;
+    line-height: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* Extra Small Devices */
+@media screen and (max-width: 320px) {
+  .body-header-body {
+    padding: 0 0.5rem;
+  }
+
+  .header h2 {
+    font-size: 1.3rem;
+  }
+
+  .main-cards-1 {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .right-side h3 {
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+  }
+}
+
