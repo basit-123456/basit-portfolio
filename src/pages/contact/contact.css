@@ -180,16 +180,22 @@
 .form-section-1 {
   flex: 1;
   min-width: 300px;
-}
-
+}/* Base form styling */
 .form-section-1 form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
 
+/* Input container for labels */
+.form-section-1 .input-container {
+  position: relative;
+}
+
+/* Input and textarea styling */
 .form-section-1 input,
 .form-section-1 textarea {
+  width: 100%;
   padding: 1rem;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
@@ -198,23 +204,75 @@
   background-color: #fff;
 }
 
+/* Focus states */
 .form-section-1 input:focus,
 .form-section-1 textarea:focus {
-  border-color: #4776E6;
+  border-color: #4776e6;
   box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.2);
   outline: none;
 }
 
-.form-section-1 input::placeholder,
-.form-section-1 textarea::placeholder {
+/* Label styling */
+.form-section-1 label {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
   color: #aaa;
-  transition: color 0.3s ease;
+  pointer-events: none;
+  transition: 0.3s ease all;
+  padding: 0 0.25rem;
 }
 
+/* Special positioning for textarea label */
+.form-section-1 .textarea-container label {
+  top: 2rem;
+}
+
+/* Move label to top when input is focused or has content */
+.form-section-1 input:focus ~ label,
+.form-section-1 input:not(:placeholder-shown) ~ label {
+  top: 0.7rem;
+  font-size: 0.75rem;
+  color: #4776e6;
+}
+
+/* Move textarea label to top when focused or has content */
+.form-section-1 textarea:focus ~ label,
+.form-section-1 textarea:not(:placeholder-shown) ~ label {
+  top: 0.7rem;
+  font-size: 0.75rem;
+  color: #4776e6;
+}
+
+/* Hide placeholder when focused */
 .form-section-1 input:focus::placeholder,
 .form-section-1 textarea:focus::placeholder {
-  color: #bbb;
+  color: transparent;
 }
+
+/* Keep your existing button styling */
+.form-section-1 #btn-2 {
+  /* Your existing button styles */
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.form-section-1 #btn-2:hover {
+  background: linear-gradient(to right, #3a67d7, #7e45da);
+  transform: translateY(-2px);
+}
+
 
 #btn-2 {
   background: linear-gradient(135deg, #4776E6, #8E54E9);

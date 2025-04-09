@@ -67,7 +67,7 @@ function Contact() {
           <img
             src="https://api.afghancosmos.com/media/images/png/destination.png"
             alt="logo"
-            onError={(e) => {
+            onError={(e) => {   
               e.currentTarget.src = "https://via.placeholder.com/400x300?text=Afghan+Cosmos"
               console.error("Image failed to load, using placeholder")
             }}
