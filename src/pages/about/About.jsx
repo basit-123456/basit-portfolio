@@ -294,7 +294,7 @@ function About() {
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-envelope"></i>
-                  <span>basitahmadzai2025@gmail.com</span>
+                  <span>basikhan@gmail.com</span>
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-map-marker-alt"></i>
