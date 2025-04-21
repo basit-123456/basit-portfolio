@@ -20,11 +20,17 @@ const Toast = Swal.mixin({
 
 function Contact() {
   const handleEmailClick = () => {
+      Swal.fire({
+      icon: "error",
+      title: "close",
+      text: "You want to close at info@afghancosmos.com",
+    });
     Swal.fire({
       icon: "info",
       title: "Email Us",
       text: "You can email us at info@afghancosmos.com",
     });
+  
   };
 
   const handleSubmit = (e) => {
