@@ -42,6 +42,10 @@ footer {
   background-color: #1D4ED8;
 }
 
+.swal2-timer-progress-bar.custom-toast-progress {
+  background: #28a745 !important; /* Bootstrap success green */
+}
+
 /* Quick Links */
 .footer-section a {
   color: #F9FAFB;
