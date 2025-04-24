@@ -23,7 +23,7 @@ const Toast = Swal.mixin({
 });
 
 // Sample testimonial data
-const testimonials = [
+const testimonials = [ 
   {
     id: 1,
     name: "Sarah Johnson",
