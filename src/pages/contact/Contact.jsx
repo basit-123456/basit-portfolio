@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import "./contact.css";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import emailjs from "emailjs-com"; // You'll need to install this: npm install emailjs-com
 
 const MySwal = withReactContent(Swal);
 
@@ -19,8 +20,29 @@ const Toast = Swal.mixin({
 });
 
 function Contact() {
+  // State to manage form inputs
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  // State to track form submission status
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({
+      ...formData,
+      [id]: value,
+    });
+  };
+
   const handleEmailClick = () => {
-      Swal.fire({
+    Swal.fire({
       icon: "error",
       title: "close",
       text: "You want to close at info@afghancosmos.com",
@@ -30,16 +52,57 @@ function Contact() {
       title: "Email Us",
       text: "You can email us at info@afghancosmos.com",
     });
-  
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    Toast.fire({
-      icon: "success",
-      title: "Thank you for your message! We will get back to you soon.",
-    });
-    // Add actual form submission logic if needed here
+    setIsSubmitting(true);
+
+    try {
+      // EmailJS configuration
+      // Replace these with your actual EmailJS service, template, and user IDs
+      const serviceId = "YOUR_EMAILJS_SERVICE_ID";
+      const templateId = "YOUR_EMAILJS_TEMPLATE_ID";
+      const userId = "YOUR_EMAILJS_USER_ID";
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: `${formData.name} ${formData.lastName}`,
+        reply_to: formData.email,
+        phone_number: formData.phone,
+        message: formData.message,
+        to_name: "Afghan Cosmos", // Recipient name
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, userId);
+
+      // Show success message
+      Toast.fire({
+        icon: "success",
+        title: "Thank you for your message! We will get back to you soon.",
+      });
+
+      // Reset form after successful submission
+      setFormData({
+        name: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      
+      // Show error message
+      Swal.fire({
+        icon: "error",
+        title: "Message Not Sent",
+        text: "There was an error sending your message. Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -95,15 +158,75 @@ function Contact() {
             }}
           />
         </div>
+
         <div className="form-section-1">
           <form onSubmit={handleSubmit}>
-            <input type="text" required placeholder="Name" />
-            <input type="text" required placeholder="Last Name" />
-            <input type="number" required placeholder="Phone Number" />
-            <input type="email" required placeholder="Email" />
-            <textarea required rows={6} placeholder="Write a message..."></textarea>
-            <button type="submit" id="btn-2">
-              Send | <i className="fa-solid fa-paper-plane"></i>
+            <div className="input-container">
+              <input 
+                type="text" 
+                id="name" 
+                required 
+                placeholder=" " 
+                value={formData.name}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="name">Name</label>
+            </div>
+
+            <div className="input-container">
+              <input 
+                type="text" 
+                id="lastName" 
+                required 
+                placeholder=" " 
+                value={formData.lastName}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="lastName">Last Name</label>
+            </div>
+
+            <div className="input-container">
+              <input 
+                type="number" 
+                id="phone" 
+                required 
+                placeholder=" " 
+                value={formData.phone}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="phone">Phone Number</label>
+            </div>
+
+            <div className="input-container">
+              <input 
+                type="email" 
+                id="email" 
+                required 
+                placeholder=" " 
+                value={formData.email}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="email">Email</label>
+            </div>
+
+            <div className="input-container textarea-container">
+              <textarea 
+                id="message" 
+                required 
+                rows={6} 
+                placeholder=" "
+                value={formData.message}
+                onChange={handleInputChange}
+              ></textarea>
+              <label htmlFor="message">Write a message...</label>
+            </div>
+
+            <button 
+              type="submit" 
+              id="btn-2"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Sending...' : 'Send'} | <i className="fa-solid fa-paper-plane"></i>
             </button>
           </form>
         </div>

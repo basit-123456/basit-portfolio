@@ -3,7 +3,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 3rem 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Cards section styles */
@@ -34,13 +34,17 @@
 }
 
 .card1::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, #1D4ED8, #EF4444); /* Updated gradient with primary blue and accent red */
+  background: linear-gradient(
+    90deg,
+    #1d4ed8,
+    #ef4444
+  ); /* Updated gradient with primary blue and accent red */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -60,7 +64,11 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1D4ED8, #2563EB); /* Updated gradient with primary blue and hover blue */
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #2563eb
+  ); /* Updated gradient with primary blue and hover blue */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -89,24 +97,28 @@
 }
 
 .body-card p {
-  color: #6B7280; /* Updated to secondary text color */
+  color: #6b7280; /* Updated to secondary text color */
   line-height: 1.6;
 }
 
 .icon-number h3 {
-  color: #1D4ED8; /* Updated to primary blue */
+  color: #1d4ed8; /* Updated to primary blue */
   font-size: 1.3rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .card1:hover .icon-number h3 {
-  color: #2563EB; /* Updated to hover blue */
+  color: #2563eb; /* Updated to hover blue */
 }
 
 /* Button styles */
 .icon-number-btn button {
-  background: linear-gradient(135deg, #1D4ED8, #2563EB); /* Updated gradient with primary blue and hover blue */
+  background: linear-gradient(
+    135deg,
+    #1d4ed8,
+    #2563eb
+  ); /* Updated gradient with primary blue and hover blue */
   color: white;
   border: none;
   padding: 0.8rem 2rem;
@@ -121,13 +133,17 @@
 }
 
 .icon-number-btn button::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #2563EB, #1D4ED8); /* Updated gradient with hover blue and primary blue */
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #1d4ed8
+  ); /* Updated gradient with hover blue and primary blue */
   z-index: -1;
   transition: opacity 0.3s ease;
   opacity: 0;
@@ -153,7 +169,7 @@
   gap: 3rem;
   align-items: center;
   justify-content: center;
-  background-color: #F9FAFB; /* Updated to background color */
+  background-color: #f9fafb; /* Updated to background color */
   border-radius: 15px;
   padding: 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -182,142 +198,244 @@
   min-width: 300px;
 }
 
-/* Base form styling */
+/* Form Container */
+.form-section-1 {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "Inter", sans-serif;
+}
+
+/* Form Layout */
 .form-section-1 form {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
-/* Input container for labels */
+/* Input Container */
 .form-section-1 .input-container {
   position: relative;
+  width: 100%;
 }
 
-/* Input and textarea styling */
+/* Base Input & Textarea Styling */
 .form-section-1 input,
 .form-section-1 textarea {
   width: 100%;
   padding: 1rem;
+  font-size: 1rem;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 1rem;
-  transition: all 0.3s ease;
   background-color: #fff;
+  transition: all 0.3s ease;
 }
 
-/* Focus states */
-.form-section-1 input:focus,
-.form-section-1 textarea:focus {
-  border-color: #1D4ED8; /* Updated to primary blue */
-  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2); /* Updated shadow color */
-  outline: none;
+/* Placeholder (keep it empty but with space) */
+.form-section-1 input::placeholder,
+.form-section-1 textarea::placeholder {
+  color: transparent;
 }
 
-/* Label styling */
+/* Label Styling */
 .form-section-1 label {
   position: absolute;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  color: #6B7280; /* Updated to secondary text color */
-  pointer-events: none;
-  transition: 0.3s ease all;
+  background-color: transparent;
   padding: 0 0.25rem;
+  color: #6b7280;
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 /* Special positioning for textarea label */
 .form-section-1 .textarea-container label {
-  top: 2rem;
+  top: 1.5rem;
 }
 
-/* Move label to top when input is focused or has content */
+/* Hover Effect for Inputs */
+.form-section-1 .input-container:hover input,
+.form-section-1 .input-container:hover textarea {
+  border-color: #94a3b8;
+}
+
+/* Focus & Filled States */
+.form-section-1 input:focus,
+.form-section-1 textarea:focus,
+.form-section-1 input:not(:placeholder-shown),
+.form-section-1 textarea:not(:placeholder-shown) {
+  border-color: #1d4ed8;
+  outline: none;
+  padding-top: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* Animation for Focus & Filled States */
 .form-section-1 input:focus ~ label,
-.form-section-1 input:not(:placeholder-shown) ~ label {
-  top: 0.7rem;
-  font-size: 0.75rem;
-  color: #1D4ED8; /* Updated to primary blue */
-}
-
-/* Move textarea label to top when focused or has content */
 .form-section-1 textarea:focus ~ label,
+.form-section-1 input:not(:placeholder-shown) ~ label,
 .form-section-1 textarea:not(:placeholder-shown) ~ label {
-  top: 0.7rem;
-  font-size: 0.75rem;
-  color: #1D4ED8; /* Updated to primary blue */
+  top: 0;
+  transform: translateY(-50%) scale(0.85);
+  color: #1d4ed8;
+  font-weight: 600;
+  background-color: #fff;
+  z-index: 1;
+  animation: labelFloat 0.3s ease forwards;
 }
 
-/* Hide placeholder when focused */
-.form-section-1 input:focus::placeholder,
-.form-section-1 textarea:focus::placeholder {
-  color: transparent;
+/* Focus Animation with Glow */
+.form-section-1 input:focus,
+.form-section-1 textarea:focus {
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+  animation: borderPulse 1.5s ease-in-out;
 }
 
-/* Keep your existing button styling */
+/* Button Styling */
 .form-section-1 #btn-2 {
-  /* Your existing button styles */
-  padding: 0.8rem 1.5rem;
-  background: linear-gradient(to right, #1D4ED8, #EF4444); /* Updated gradient with primary blue and accent red */
+  background-color: #1d4ed8;
   color: white;
   border: none;
-  border-radius: 8px; 
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   gap: 0.5rem;
-}
-
-.form-section-1 #btn-2:hover {
-  background: linear-gradient(to right, #2563EB, #DC2626); /* Updated gradient with hover blue and hover red */
-  transform: translateY(-2px);
-}
-
-#btn-2 {
-  background: linear-gradient(135deg, #1D4ED8, #EF4444); /* Updated gradient with primary blue and accent red */
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  margin-top: 0.5rem;
   position: relative;
   overflow: hidden;
-  z-index: 1;
-  margin-top: 0.5rem;
 }
 
-#btn-2::before {
-  content: '';
+/* Button Hover Effect */
+.form-section-1 #btn-2:hover {
+  background-color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+
+/* Button Active Effect */
+.form-section-1 #btn-2:active {
+  transform: translateY(0);
+}
+
+/* Button Ripple Effect */
+.form-section-1 #btn-2::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #EF4444, #1D4ED8); /* Updated gradient with accent red and primary blue */
-  transition: left 0.5s ease;
-  z-index: -1;
-}
-
-#btn-2:hover::before {
+  top: 0;
   left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10, 10);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
 }
 
-#btn-2:hover {
-  box-shadow: 0 7px 15px rgba(29, 78, 216, 0.3); /* Updated shadow color */
+.form-section-1 #btn-2:active::after {
+  transform: scale(0, 0);
+  opacity: 0.3;
+  transition: 0s;
 }
 
-#btn-2 i {
-  margin-left: 0.5rem;
-  transition: transform 0.3s ease;
+/* Animations */
+@keyframes borderPulse {
+  0% {
+    border-color: #e0e0e0;
+    box-shadow: none;
+  }
+  50% {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.3);
+  }
+  100% {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+  }
 }
 
-#btn-2:hover i {
-  transform: translateX(5px);
+@keyframes labelFloat {
+  0% {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #6b7280;
+  }
+  50% {
+    color: #1d4ed8;
+  }
+  100% {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    font-size: 0.75rem;
+    color: #1d4ed8;
+    font-weight: 600;
+  }
+}
+
+/* Error State */
+.form-section-1 .input-container.error input,
+.form-section-1 .input-container.error textarea {
+  border-color: #ef4444;
+}
+
+.form-section-1 .input-container.error label {
+  color: #ef4444;
+}
+
+.form-section-1 .error-message {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Success Message */
+.form-section-1 .success-message {
+  background-color: #10b981;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-section-1 input,
+  .form-section-1 textarea {
+    font-size: 0.9rem;
+  }
+
+  .form-section-1 label {
+    font-size: 0.9rem;
+  }
+
+  .form-section-1 #btn-2 {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
 
 /* Responsive styles */
@@ -326,12 +444,12 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .card1 {
     width: 100%;
     max-width: 350px;
   }
-  
+
   .contact-section-1 {
     padding: 2rem;
   }
