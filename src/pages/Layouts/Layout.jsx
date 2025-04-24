@@ -23,7 +23,7 @@ const Toast = Swal.mixin({
 });
 
 // Sample testimonial data
-const testimonials = [ 
+const testimonials = [
   {
     id: 1,
     name: "Sarah Johnson",
@@ -59,20 +59,20 @@ const testimonials = [
 ]
 
 function Layout() {
-
-  const handleEmailClick = () => {
-    Swal.fire({
-      icon: "error",
-      title: "close",
-      text: "You want to close at info@afghancosmos.com",
-    });
-    Swal.fire({
-      icon: "info",
-      title: "Email Us",
-      text: "You can email us at info@afghancosmos.com",
-    });
-
-  };
+  
+    const handleEmailClick = () => {
+        Swal.fire({
+        icon: "error",
+        title: "close",
+        text: "You want to close at info@afghancosmos.com",
+      });
+      Swal.fire({
+        icon: "info",
+        title: "Email Us",
+        text: "You can email us at info@afghancosmos.com",
+      });
+    
+    };
   const [currentIndex, setCurrentIndex] = useState(0)
 
   // Handle next testimonial
@@ -119,11 +119,7 @@ function Layout() {
           </div>
         </div>
         <div className="hero-img">
-<<<<<<< HEAD
-          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
-=======
-          <img src="/src/assets/images/BasitOwnd.PNG" alt="logo" />
->>>>>>> 26fbfeb8be95aa3eb343556a7a8dcc75b4e0becc
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
         </div>
       </div>
       {/* percentage section  */}
