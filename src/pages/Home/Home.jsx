@@ -88,7 +88,7 @@ function Home() {
           </div>
         </div>
         <div className="hero-img">
-          <img src="/src/assets/image/Basit.PNG" alt="logo" />
+        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
         </div>
       </div>
       {/* percentage section  */}

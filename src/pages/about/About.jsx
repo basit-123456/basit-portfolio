@@ -34,8 +34,9 @@ function About() {
         <div className="profile-card">
           <div className="profile-header">
             <div className="profile-image-container">
-              <img src="/src/assets/image/Basit.PNG" alt="Profile" className="profile-image" />
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile" className="profile-image" />
             </div>
+          
             <h1 className="profile-name">Abdulbasit Ahmadzai</h1>
             <p className="profile-title"> Full Stack Web Developer</p>
 
@@ -268,10 +269,7 @@ function About() {
             {/* Profile Photo */}
             <div className="profile-photo-container">
               <div className="profile-photo">
-                <img
-                  src="/src/assets/image/Basit.PNG"
-                  alt="Profile Photo"
-                />
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
               </div>
             </div>
 
