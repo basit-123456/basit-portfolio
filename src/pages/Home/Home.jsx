@@ -84,7 +84,7 @@ function Home() {
             </Link>
             <Link href="/about" className="secondary-btn">
               Learn More
-            </Link>
+            </Link>  
           </div>
         </div>
         <div className="hero-img">
