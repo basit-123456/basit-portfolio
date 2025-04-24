@@ -1049,9 +1049,10 @@ h2 {
 /* Skills Sections */
 
 /* Skills Section Styles */
+/* Skills Section Styles */
 .skills-section {
   padding: 5rem 0;
-  background-color: #F9FAFB;
+  background-color: #f9fafb;
   position: relative;
   overflow: hidden;
 }
@@ -1091,7 +1092,7 @@ h2 {
 }
 
 .skills-header h2 span {
-  color: #1D4ED8;
+  color: #1d4ed8;
   position: relative;
 }
 
@@ -1102,16 +1103,92 @@ h2 {
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #1D4ED8;
+  background-color: #1d4ed8;
   border-radius: 2px;
 }
 
 .skills-header p {
   max-width: 700px;
   margin: 0 auto;
-  color: #6B7280;
+  color: #6b7280;
   line-height: 1.7;
   font-size: 1.1rem;
+}
+
+/* Circular Progress Styles */
+.circular-progress-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.circular-progress svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-background {
+  stroke: #e9ecef;
+}
+
+.progress-circle {
+  stroke: #1d4ed8;
+  transition: stroke-dashoffset 1.5s ease;
+}
+
+.percent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percent-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.skill-circle-name {
+  position: absolute;
+  bottom: -40px;
+  text-align: center;
+  font-weight: 600;
+  color: #111827;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(29, 78, 216, 0.1);
+  border-radius: 50%;
+  color: #1d4ed8;
 }
 
 /* Skills Content Layout */
@@ -1120,6 +1197,12 @@ h2 {
   flex-wrap: wrap;
   gap: 3rem;
   margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
 }
 
 .skills-left,
@@ -1131,8 +1214,6 @@ h2 {
 /* Skill Category */
 .skill-category {
   margin-bottom: 2.5rem;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.2s;
 }
 
 .skill-category h3 {
@@ -1141,7 +1222,7 @@ h2 {
   margin-bottom: 1.5rem;
   position: relative;
   padding-left: 15px;
-  border-left: 4px solid #1D4ED8;
+  border-left: 4px solid #1d4ed8;
 }
 
 /* Skill Item with Progress Bar */
@@ -1161,7 +1242,7 @@ h2 {
 }
 
 .skill-percentage {
-  color: #1D4ED8;
+  color: #1d4ed8;
   font-weight: 600;
 }
 
@@ -1169,15 +1250,31 @@ h2 {
   height: 10px;
   background-color: #e9ecef;
   border-radius: 5px;
-  /* overflow: hidden; */
+  position: relative;
 }
 
 .skill-progress-bar {
   height: 100%;
   width: 0; /* Initial width, will be animated */
-  background: linear-gradient(90deg, #1D4ED8, #2563EB);
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
   border-radius: 5px;
   transition: width 1.5s ease;
+  position: relative;
+}
+
+/* Add dot at the end of progress bar */
+.skill-progress-bar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #1d4ed8;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(29, 78, 216, 0.5);
 }
 
 /* Skill Cards */
@@ -1186,6 +1283,8 @@ h2 {
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
   margin-top: 3rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 
 .skill-card {
@@ -1195,13 +1294,13 @@ h2 {
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.4s ease;
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: 0.4s;
+  border: 1px solid #f1f5f9;
 }
 
 .skill-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(29, 78, 216, 0.2);
 }
 
 .skill-icon {
@@ -1282,6 +1381,10 @@ h2 {
   .skill-cards {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .circular-progress-container {
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1304,6 +1407,7 @@ h2 {
   .skills-content {
     flex-direction: column;
     gap: 2rem;
+    padding: 1.5rem;
   }
 
   .skills-left,
@@ -1317,6 +1421,20 @@ h2 {
 
   .skill-cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .circular-progress {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circular-progress svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .percent-text {
+    font-size: 1.2rem;
   }
 }
 
@@ -1342,6 +1460,34 @@ h2 {
     width: 60px;
     height: 60px;
     font-size: 1.8rem;
+  }
+
+  .circular-progress-container {
+    gap: 1rem;
+  }
+
+  .circular-progress {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circular-progress svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .percent-text {
+    font-size: 1.1rem;
+  }
+
+  .skill-circle-name {
+    font-size: 0.9rem;
+    bottom: -35px;
+  }
+
+  .skill-icon-circle {
+    width: 30px;
+    height: 30px;
   }
 }
 
@@ -1376,6 +1522,24 @@ h2 {
   .skill-card h4 {
     font-size: 0.9rem;
   }
+
+  .circular-progress-container {
+    justify-content: space-around;
+  }
+
+  .circular-progress {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circular-progress svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .percent-text {
+    font-size: 1rem;
+  }
 }
 
 /* iPhone SE, Galaxy S5 and other small phones */
@@ -1393,8 +1557,619 @@ h2 {
   .skill-card h4 {
     font-size: 0.8rem;
   }
+
+  .circular-progress {
+    width: 70px;
+    height: 70px;
+  }
+
+  .circular-progress svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .percent-text {
+    font-size: 0.9rem;
+  }
+
+  .skill-circle-name {
+    font-size: 0.8rem;
+    bottom: -30px;
+  }
+
+  .skill-icon-circle {
+    width: 25px;
+    height: 25px;
+  }
+}/* Skills Section Styles */
+.skills-section {
+  padding: 5rem 0;
+  background-color: #f9fafb;
+  position: relative;
+  overflow: hidden;
 }
 
+.skills-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 90% 10%, rgba(29, 78, 216, 0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styles */
+.skills-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.skills-header h2 {
+  font-size: 2.5rem;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.skills-header h2 span {
+  color: #1d4ed8;
+  position: relative;
+}
+
+.skills-header h2 span::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #1d4ed8;
+  border-radius: 2px;
+}
+
+.skills-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #6b7280;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+/* Circular Progress Styles */
+.circular-progress-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.circular-progress {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.circular-progress svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-background {
+  stroke: #e9ecef;
+}
+
+.progress-circle {
+  stroke: #1d4ed8;
+  transition: stroke-dashoffset 1.5s ease;
+}
+
+.percent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.percent-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.skill-circle-name {
+  position: absolute;
+  bottom: -40px;
+  text-align: center;
+  font-weight: 600;
+  color: #111827;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(29, 78, 216, 0.1);
+  border-radius: 50%;
+  color: #1d4ed8;
+}
+
+/* Skills Content Layout */
+.skills-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-bottom: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.skills-left,
+.skills-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Skill Category */
+.skill-category {
+  margin-bottom: 2.5rem;
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 15px;
+  border-left: 4px solid #1d4ed8;
+}
+
+/* Skill Item with Progress Bar */
+.skill-item {
+  margin-bottom: 1.5rem;
+}
+
+.skill-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.skill-percentage {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.skill-progress {
+  height: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  position: relative;
+}
+
+/* Modified progress bar to use data-width attribute */
+.skill-progress-bar {
+  height: 100%;
+  width: 0; /* Initial width, will be animated */
+  background: linear-gradient(90deg, #1d4ed8, #2563eb);
+  border-radius: 5px;
+  transition: width 1.5s ease;
+  position: relative;
+}
+
+/* Add dot at the end of progress bar */
+.skill-progress-bar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #1d4ed8;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 10px rgba(29, 78, 216, 0.5);
+}
+
+/* Set specific widths for different skill levels */
+.skill-progress-bar[data-width="100%"] {
+  width: 100%;
+}
+
+.skill-progress-bar[data-width="95%"] {
+  width: 95%;
+}
+
+.skill-progress-bar[data-width="90%"] {
+  width: 90%;
+}
+
+.skill-progress-bar[data-width="89%"] {
+  width: 89%;
+}
+
+.skill-progress-bar[data-width="88%"] {
+  width: 88%;
+}
+
+.skill-progress-bar[data-width="85%"] {
+  width: 85%;
+}
+
+.skill-progress-bar[data-width="80%"] {
+  width: 80%;
+}
+
+.skill-progress-bar[data-width="75%"] {
+  width: 75%;
+}
+
+.skill-progress-bar[data-width="70%"] {
+  width: 70%;
+}
+
+.skill-progress-bar[data-width="65%"] {
+  width: 65%;
+}
+
+.skill-progress-bar[data-width="60%"] {
+  width: 60%;
+}
+
+/* Animation to reveal progress bars */
+@keyframes progressAnimation {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: var(--progress-width);
+  }
+}
+
+/* Skill Cards */
+.skill-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.skill-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border: 1px solid #f1f5f9;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border-color: rgba(29, 78, 216, 0.2);
+}
+
+.skill-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+}
+
+.skill-card:hover .skill-icon {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.skill-card h4 {
+  font-size: 1rem;
+  color: #111827;
+  margin: 0;
+}
+
+/* Skill Icon Colors */
+.html-icon {
+  color: #e44d26;
+  background-color: rgba(228, 77, 38, 0.1);
+}
+
+.css-icon {
+  color: #264de4;
+  background-color: rgba(38, 77, 228, 0.1);
+}
+
+.js-icon {
+  color: #f7df1e;
+  background-color: rgba(247, 223, 30, 0.1);
+}
+
+.react-icon {
+  color: #61dafb;
+  background-color: rgba(97, 218, 251, 0.1);
+}
+
+.bootstrap-icon {
+  color: #7952b3;
+  background-color: rgba(121, 82, 179, 0.1);
+}
+
+.python-icon {
+  color: #3776ab;
+  background-color: rgba(55, 118, 171, 0.1);
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .skills-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .skills-content {
+    gap: 2rem;
+  }
+
+  .skill-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .circular-progress-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 4rem 0;
+  }
+
+  .skills-header {
+    margin-bottom: 3rem;
+  }
+
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+
+  .skills-header p {
+    font-size: 1rem;
+  }
+
+  .skills-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .skills-left,
+  .skills-right {
+    width: 100%;
+  }
+
+  .skill-category h3 {
+    font-size: 1.3rem;
+  }
+
+  .skill-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .circular-progress {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circular-progress svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .percent-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-section {
+    padding: 3rem 0;
+  }
+
+  .skills-container {
+    padding: 0 1.5rem;
+  }
+
+  .skills-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .skill-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  .circular-progress-container {
+    gap: 1rem;
+  }
+
+  .circular-progress {
+    width: 90px;
+    height: 90px;
+  }
+
+  .circular-progress svg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .percent-text {
+    font-size: 1.1rem;
+  }
+
+  .skill-circle-name {
+    font-size: 0.9rem;
+    bottom: -35px;
+  }
+
+  .skill-icon-circle {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .skill-category h3 {
+    font-size: 1.2rem;
+  }
+
+  .skill-name,
+  .skill-percentage {
+    font-size: 0.9rem;
+  }
+
+  .skill-progress {
+    height: 8px;
+  }
+
+  .skill-card {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .skill-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .circular-progress-container {
+    justify-content: space-around;
+  }
+
+  .circular-progress {
+    width: 80px;
+    height: 80px;
+  }
+
+  .circular-progress svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .percent-text {
+    font-size: 1rem;
+  }
+}
+
+/* iPhone SE, Galaxy S5 and other small phones */
+@media (max-width: 375px) {
+  .skill-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .skill-card h4 {
+    font-size: 0.8rem;
+  }
+
+  .circular-progress {
+    width: 70px;
+    height: 70px;
+  }
+
+  .circular-progress svg {
+    width: 70px;
+    height: 70px;
+  }
+
+  .percent-text {
+    font-size: 0.9rem;
+  }
+
+  .skill-circle-name {
+    font-size: 0.8rem;
+    bottom: -30px;
+  }
+
+  .skill-icon-circle {
+    width: 25px;
+    height: 25px;
+  }
+}
 
 /* Team section style */
 
