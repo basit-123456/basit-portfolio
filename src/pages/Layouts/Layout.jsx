@@ -119,7 +119,7 @@ function Layout() {
           </div>
         </div>
         <div className="hero-img">
-          <img src="/src/assets/images/BasitOwnd.PNG" alt="logo" />
+          <img src="https://hebbkx1anhila.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5KNfzEWBusnTT.png"alt="logo" />
         </div>
       </div>
       {/* percentage section  */}
