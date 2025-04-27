@@ -59,20 +59,20 @@ const testimonials = [
 ]
 
 function Layout() {
-  
-    const handleEmailClick = () => {
-        Swal.fire({
-        icon: "error",
-        title: "close",
-        text: "You want to close at info@afghancosmos.com",
-      });
-      Swal.fire({
-        icon: "info",
-        title: "Email Us",
-        text: "You can email us at info@afghancosmos.com",
-      });
-    
-    };
+
+  const handleEmailClick = () => {
+    Swal.fire({
+      icon: "error",
+      title: "close",
+      text: "You want to close at info@afghancosmos.com",
+    });
+    Swal.fire({
+      icon: "info",
+      title: "Email Us",
+      text: "You can email us at info@afghancosmos.com",
+    });
+
+  };
   const [currentIndex, setCurrentIndex] = useState(0)
 
   // Handle next testimonial
@@ -110,16 +110,17 @@ function Layout() {
           </p>
 
           <div className="cta-buttons">
-            <Link href="/contact" className="primary-btn">
+            <Link href="/Contact" className="primary-btn">
               Get Started <i className="fa-solid fa-arrow-right"></i>
             </Link>
-            <Link href="/about" className="secondary-btn">
+            <Link href="/About" className="secondary-btn">
               Learn More
             </Link>
           </div>
+
         </div>
         <div className="hero-img">
-        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
         </div>
       </div>
       {/* percentage section  */}

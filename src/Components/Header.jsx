@@ -56,11 +56,11 @@ function Header() {
 
         <div className={`menu-bar-section ${menuOpen ? 'active' : ''}`}>
           <ul>
-            <li><Link to="/Home"><Home size={18} className="menu-icon" /><span>Home</span></Link></li>
-            <li><Link to="/About"><Info size={18} className="menu-icon" /><span>About</span></Link></li>
-            <li><Link to="/Projects"><FolderKanban size={18} className="menu-icon" /><span>Projects</span></Link></li>
-            <li><Link to="/Services"><Briefcase size={18} className="menu-icon" /><span>Services</span></Link></li>
-            <li><Link to="/Contact"><Phone size={18} className="menu-icon" /><span>Contact</span></Link></li>
+            <li><Link to="/home"><Home size={18} className="menu-icon" /><span>Home</span></Link></li>
+            <li><Link to="/about"><Info size={18} className="menu-icon" /><span>About</span></Link></li>
+            <li><Link to="/projects"><FolderKanban size={18} className="menu-icon" /><span>Projects</span></Link></li>
+            <li><Link to="/services"><Briefcase size={18} className="menu-icon" /><span>Services</span></Link></li>
+            <li><Link to="/contact"><Phone size={18} className="menu-icon" /><span>Contact</span></Link></li>
           </ul>
         </div>
 
