@@ -1,9 +1,26 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 // import Link from "next/link"/
 import { Link } from 'react-router-dom';
-import "./home.css"
+import "./Home.css"
+
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
+
+const Toast = Swal.mixin({
+  toast: true,    
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.onmouseenter = Swal.stopTimer;
+    toast.onmouseleave = Swal.resumeTimer;
+  },
+});
 
 // Sample testimonial data
 const testimonials = [
@@ -42,7 +59,46 @@ const testimonials = [
 ]
 
 function Home() {
+
+  const handleEmailClick = () => {
+    Swal.fire({
+      icon: "error",
+      title: "close",
+      text: "You want to close at info@afghancosmos.com",
+    });
+    Swal.fire({
+      icon: "info",
+      title: "Email Us",
+      text: "You can email us at info@afghancosmos.com",
+    });
+
+  };
   const [currentIndex, setCurrentIndex] = useState(0)
+
+  useEffect(() => {
+    // Add the settings script dynamically
+    const settingsScript = document.createElement('script');
+    settingsScript.innerHTML = `
+      window.gtranslateSettings = {
+        default_language: "en",
+        languages: ["en", "fr", "it", "es"],
+        wrapper_selector: ".gtranslate_wrapper"
+      };
+    `;
+    document.body.appendChild(settingsScript);
+
+    // Add the actual widget script
+    const widgetScript = document.createElement('script');
+    widgetScript.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+    widgetScript.defer = true;
+    document.body.appendChild(widgetScript);
+
+    // Cleanup on unmount
+    return () => {
+      document.body.removeChild(settingsScript);
+      document.body.removeChild(widgetScript);
+    };
+  }, []);
 
   // Handle next testimonial
   const nextTestimonial = () => {
@@ -62,8 +118,12 @@ function Home() {
   // Current testimonial
   const testimonial = testimonials[currentIndex]
 
+
+  
+
   return (
     <div className="hero">
+      <div className="gtranslate_wrapper"></div>
       <div className="main-hero">
         <div className="hero-info">
           <h3>
@@ -79,13 +139,14 @@ function Home() {
           </p>
 
           <div className="cta-buttons">
-            <Link href="/contact" className="primary-btn">
+            <Link href="/Contact" className="primary-btn">
               Get Started <i className="fa-solid fa-arrow-right"></i>
             </Link>
-            <Link href="/about" className="secondary-btn">
+            <Link href="/About" className="secondary-btn">
               Learn More
-            </Link>  
+            </Link>
           </div>
+
         </div>
         <div className="hero-img">
           <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/BasitOwnd.PNG-Ny7CkOsfPGfwbvyw5pKNfzEWBusnTT.png" alt="Profile Image" />
@@ -683,12 +744,14 @@ function Home() {
               <span className="form-error"></span>
             </div>
             <button type="submit" className="submit-btn">
-              <Link href="/contact">JOIN NOW</Link> <i className="fa-solid fa-paper-plane"></i>
+              <Link href="/contact" onClick={handleEmailClick}>JOIN NOW</Link> <i className="fa-solid fa-paper-plane"></i>
             </button>
           </form>
         </div>
       </section>
+
     </div>
+    
   )
 }
 

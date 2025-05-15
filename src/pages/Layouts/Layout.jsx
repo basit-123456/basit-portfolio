@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 // import Link from "next/link"/
 import { Link } from 'react-router-dom';
 import "./layout.css"
@@ -11,7 +11,7 @@ import withReactContent from "sweetalert2-react-content";
 const MySwal = withReactContent(Swal);
 
 const Toast = Swal.mixin({
-  toast: true,
+  toast: true,    
   position: "top-end",
   showConfirmButton: false,
   timer: 3000,
@@ -75,6 +75,31 @@ function Layout() {
   };
   const [currentIndex, setCurrentIndex] = useState(0)
 
+  useEffect(() => {
+    // Add the settings script dynamically
+    const settingsScript = document.createElement('script');
+    settingsScript.innerHTML = `
+      window.gtranslateSettings = {
+        default_language: "en",
+        languages: ["en", "fr", "it", "es"],
+        wrapper_selector: ".gtranslate_wrapper"
+      };
+    `;
+    document.body.appendChild(settingsScript);
+
+    // Add the actual widget script
+    const widgetScript = document.createElement('script');
+    widgetScript.src = "https://cdn.gtranslate.net/widgets/latest/float.js";
+    widgetScript.defer = true;
+    document.body.appendChild(widgetScript);
+
+    // Cleanup on unmount
+    return () => {
+      document.body.removeChild(settingsScript);
+      document.body.removeChild(widgetScript);
+    };
+  }, []);
+
   // Handle next testimonial
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
@@ -93,8 +118,12 @@ function Layout() {
   // Current testimonial
   const testimonial = testimonials[currentIndex]
 
+
+  
+
   return (
     <div className="hero">
+      <div className="gtranslate_wrapper"></div>
       <div className="main-hero">
         <div className="hero-info">
           <h3>
@@ -720,7 +749,9 @@ function Layout() {
           </form>
         </div>
       </section>
+
     </div>
+    
   )
 }
 
